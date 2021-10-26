@@ -5,7 +5,7 @@ def false_position(f,xl,xu,es):
 	xr_old=0
 	ea=100
 	xr=xu-(f(xu)*(xl-xu))/(f(xl)-f(xu))
-	step=-1
+	step=0
 	while abs(ea)>es:
 		xr=xu-(f(xu)*(xl-xu))/(f(xl)-f(xu))
 		if f(xr)*f(xu)>0:
