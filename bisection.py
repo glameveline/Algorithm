@@ -6,7 +6,7 @@ def bisection(f,xl,xu,es):
 	xr_old=xu
 	xr=(xl+xu)/2
 	ea=100
-	step=-1
+	step=0
 	while abs(ea)>es:
 		if f(xr)*f(xu)>0:
 			xu=xr
