@@ -6,9 +6,10 @@ def bisection(f,xl,xu,es):
 	xr_old=xu
 	xr=(xl+xu)/2
 	ea=100
-	step=0
+	step=-1
 	while abs(ea)>es:
 		if f(xr)*f(xu)>0:
+			xu_old=xu
 			xu=xr
 		elif f(xr)*f(xu)<0:
 			xl=xr
@@ -20,7 +21,7 @@ def bisection(f,xl,xu,es):
 		ea=(xr-xr_old)/xr*100
 		step+=1
 		print("step\txl\txu\txr\tea")
-		print("{} {} {} {} {}\n".format(step,xl, xu,xr,ea))
+		print("{} {} {} {} {}\n".format(step,xl, xu_old,xr,ea))
 		
 f=lambda x:-12-21*x+18*x**2-2.75*x**3
 bisection(f, -1, 0, 1)
